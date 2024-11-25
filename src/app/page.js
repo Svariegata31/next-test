@@ -5,6 +5,15 @@ import Image from "next/image";
 
 export default function Home() {
   const [count, setCount] = useState(3);
+  const [color, setColor] = useState('bg-red-500');
+
+  const changeColor = () => {
+    if (color === 'bg-green-500') {
+      setColor('bg-red-500');
+    } else {
+      setColor('bg-green-500');
+    }
+  }
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -47,6 +56,8 @@ export default function Home() {
             </button>
           </div>
         </div>
+
+        <div className={`${color} text-white p-4 rounded-lg font-bold shadow-md shadow-black hover:opacity-50`} onClick={changeColor}>Holassssss</div>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
